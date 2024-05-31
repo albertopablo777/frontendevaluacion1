@@ -12,8 +12,9 @@
                 <input cFormControl
                        id="Apellido Paterno"
                        placeholder="Apellido Paterno"
-                       [(ngModel)] = "estudiantemodelo._apPAT"
                        type="text"
+                       [(ngModel)] = "estudiantemodelo._apPAT" name = "first"
+                       name = "Apellido Paterno"
                 />
               </div>
               <div class="mb-3">
@@ -21,8 +22,9 @@
                 <input cFormControl
                        id="Apellido Materno"
                        placeholder="Apellido Materno"
-                       [(ngModel)] = "estudiantemodelo._apMAT"
                        type="text"
+                       [(ngModel)] = "estudiantemodelo._apMAT"
+                       name = "Apellido Materno"
                 />
               </div>
               <div class="mb-3">
@@ -30,8 +32,9 @@
                 <input cFormControl
                        id="Nombre 1"
                        placeholder="Nombre 1"
-                       [(ngModel)] = "estudiantemodelo._nom1"
                        type="text"
+                       [(ngModel)] = "estudiantemodelo._nom1"
+                       name = "Nombre 1"
                 />
               </div>
               <div class="mb-3">
@@ -39,8 +42,9 @@
                 <input cFormControl
                        id="Nombre 2"
                        placeholder="Nombre 2"
-                       [(ngModel)] = "estudiantemodelo._nom2"
                        type="text"
+                       [(ngModel)] = "estudiantemodelo._nom2"
+                       name = "Nombre 2"
                 />
               </div>
             <div class="mb-3">
@@ -48,17 +52,19 @@
               <input cFormControl
                      id="Curso"
                      placeholder="Curso"
-                     [(ngModel)] = "estudiantemodelo._curso"
                      type="text"
+                     [(ngModel)] = "estudiantemodelo._curso"
+                     name = "Curso"
               />
             </div>
               <div class="mb-3">
-                <label cLabel for="Lug nacimiento">Lugar de nacimiento </label>
+                <label cLabel for="Lugar nacimiento">Lugar de nacimiento </label>
                 <input cFormControl
-                       id="Lug nacimiento"
+                       id="Lugar nacimiento"
                        placeholder="Lug nacimiento"
-                       [(ngModel)] = "estudiantemodelo.lugnac"
                        type="text"
+                       [(ngModel)] = "estudiantemodelo.lugnac"
+                       name = "Lugar nacimiento"
                 />
               </div>
               <div class="mb-3">
@@ -66,8 +72,9 @@
                 <input cFormControl
                        id="Edad"
                        placeholder="Edad"
-                       [(ngModel)] = "estudiantemodelo._edad"
                        type="number"
+                       [(ngModel)] = "estudiantemodelo._edad"
+                       name = "Edad"
                 />
               </div>
               <div class="mb-3">
@@ -75,10 +82,10 @@
                 <select aria-label="Seleccione usuario" cSelect class="mb-3" sizing="lg">
                     <option>selecciona usuario</option>
                     <option value="1">Btito</option>
-                    <option value="2">Pablo</option>
+                    <option value="66495f988713a84c42a7497d">Pablo</option>
                 </select>
               </div>
-              <button cButton class="me-1" color="primary" type="submit">
+              <button (click) = "guardarestudiante" cButton class="me-1" color="primary" type="submit">
                 Guardar
               </button>
             </form>
@@ -91,6 +98,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Apellido paterno</th>
+              <th scope="col">Apellido materno</th>
               <th scope="col">Nombre</th>
               <th scope="col">Acciones</th>
             </tr>
@@ -99,6 +107,7 @@
               @for (estud of listaEstudiantes; track estud; ){
                 <tr>
                   <th scope="row">1</th>
+                  <td>{{estud._apPAT}}</td>
                   <td>{{estud._apMAT}}</td>
                   <td>{{estud._nom1}}</td>
                   <td><button cButton color="warning" variant="outline">Editar</button> 

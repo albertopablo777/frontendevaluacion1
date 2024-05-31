@@ -38,4 +38,16 @@ r: any;
     }
   })
   }
-}
+  guardarestudiante (){
+      console.log(this.estudiantemodelo);
+      this.estudianteService.agregarEstudiante(this.estudiantemodelo).subscribe({
+        next : (respuesta) =>{
+          console.log("Se guardo Exitosamente", respuesta);
+        },
+        error: (error) => {
+          console.log(error);
+          this.getEstudiante();
+        }  
+      })
+  }
+};
