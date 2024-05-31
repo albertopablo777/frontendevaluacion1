@@ -12,6 +12,7 @@
                 <input cFormControl
                        id="Apellido Paterno"
                        placeholder="Apellido Paterno"
+                       [(ngModel)] = "estudiantemodelo._apPAT"
                        type="text"
                 />
               </div>
@@ -20,6 +21,7 @@
                 <input cFormControl
                        id="Apellido Materno"
                        placeholder="Apellido Materno"
+                       [(ngModel)] = "estudiantemodelo._apMAT"
                        type="text"
                 />
               </div>
@@ -28,6 +30,7 @@
                 <input cFormControl
                        id="Nombre 1"
                        placeholder="Nombre 1"
+                       [(ngModel)] = "estudiantemodelo._nom1"
                        type="text"
                 />
               </div>
@@ -36,38 +39,25 @@
                 <input cFormControl
                        id="Nombre 2"
                        placeholder="Nombre 2"
+                       [(ngModel)] = "estudiantemodelo._nom2"
                        type="text"
                 />
               </div>
-              <div class="mb-3">
-                <label cLabel for="Curso"> Curso </label>
-                <select aria-label="Seleccione Curso" cSelect class="mb-3" sizing="lg">
-                    <option>selecciona curso</option>
-                    <option value="1">Primero A</option>
-                    <option value="2">Primero B</option>
-                    <option value="3">Primero C</option>
-                    <option value="4">Segundo A</option>
-                    <option value="5">Segundo B</option>
-                    <option value="6">Segundo C</option>
-                    <option value="7">Tercero A</option>
-                    <option value="8">Tercero B</option>
-                    <option value="9">Tercero C</option>
-                    <option value="10">Cuarto A</option>
-                    <option value="11">Cuarto B</option>
-                    <option value="12">Cuarto C</option>
-                    <option value="13">Quinto A</option>
-                    <option value="14">Quinto B</option>
-                    <option value="15">Quinto C</option>
-                    <option value="16">Sexto A</option>
-                    <option value="17">Sexto B</option>
-                    <option value="18">Sexto C</option>
-                </select>
-              </div>
+            <div class="mb-3">
+              <label cLabel for="Curso">Curso </label>
+              <input cFormControl
+                     id="Curso"
+                     placeholder="Curso"
+                     [(ngModel)] = "estudiantemodelo._curso"
+                     type="text"
+              />
+            </div>
               <div class="mb-3">
                 <label cLabel for="Lug nacimiento">Lugar de nacimiento </label>
                 <input cFormControl
                        id="Lug nacimiento"
                        placeholder="Lug nacimiento"
+                       [(ngModel)] = "estudiantemodelo.lugnac"
                        type="text"
                 />
               </div>
@@ -76,6 +66,7 @@
                 <input cFormControl
                        id="Edad"
                        placeholder="Edad"
+                       [(ngModel)] = "estudiantemodelo._edad"
                        type="number"
                 />
               </div>
@@ -99,19 +90,21 @@
             <thead>
             <tr>
               <th scope="col">#</th>
+              <th scope="col">Apellido paterno</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Usuario</th>
               <th scope="col">Acciones</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td><button cButton color="warning" variant="outline">Editar</button> 
-                  <button cButton color="danger" variant="outline">Eliminar</button></td>
-            </tr>
+              @for (estud of listaEstudiantes; track estud; ){
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{estud._apMAT}}</td>
+                  <td>{{estud._nom1}}</td>
+                  <td><button cButton color="warning" variant="outline">Editar</button> 
+                      <button cButton color="danger" variant="outline">Eliminar</button></td>
+                </tr>
+              }
             </tbody>
           </table>     
     </c-col>
