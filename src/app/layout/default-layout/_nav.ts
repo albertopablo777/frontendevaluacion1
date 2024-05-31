@@ -10,6 +10,29 @@ export const navItems: INavData[] = [
       text: 'NEW'
     }
   },
+  ///-------------------------ESTUDIANTE INICIO
+  {
+    title: true,
+    name: 'MODULO INSCRIPCION'
+  }, 
+  {
+    name: 'INSCRIPCION',
+    url: '/inscripcion',
+    iconComponent: { name: 'cil-puzzle' },
+    children: [
+      {
+        name: 'ESTUDIANTE',
+        url: '/inscripcion/estudiante',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'REPORTE',
+        url: '/inscripcion/reportes',
+        icon: 'nav-icon-bullet'
+      }
+    ] 
+  },
+  ///-------------------------ESTUDIANTE FINAL
   {
     title: true,
     name: 'Theme'
