@@ -78,12 +78,14 @@
                 />
               </div>
               <div class="mb-3">
-                <label cLabel for="usuario"> Usuario </label>
-                <select aria-label="Seleccione usuario" cSelect class="mb-3" sizing="lg">
-                    <option>selecciona usuario</option>
-                    <option value="1">Btito</option>
-                    <option value="66495f988713a84c42a7497d">Pablo</option>
-                </select>
+                <label cLabel for="Edad"> Usuario </label>
+                <input cFormControl
+                       id="Usuario"
+                       placeholder="Usuario"
+                       type="text"
+                       [(ngModel)] = "estudiantemodelo.usuario"
+                       name = "Usuario"
+                />
               </div>
               <button (click) = "guardarestudiante" cButton class="me-1" color="primary" type="submit">
                 Guardar

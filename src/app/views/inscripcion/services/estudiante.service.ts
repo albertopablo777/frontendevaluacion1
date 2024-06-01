@@ -18,14 +18,14 @@ export  class EstudianteService {
         return this.http.post<EstudianteModel>(`${this.API_URL}/crear`, estudiante);
       }
     
-    editarEstudiante(estudiante: EstudianteModel) : Observable<EstudianteModel> {
-        return this.http.put<EstudianteModel>(`${this.API_URL}/editar/${estudiante}`, estudiante);
-      }
+    //editarEstudiante(estudiante: EstudianteModel) : Observable<EstudianteModel> {
+      //  return this.http.put<EstudianteModel>(`${this.API_URL}/editar/${estudiante}`, estudiante);
+      //}
     
-    eliminarEstudiante(idestudiante : string) : Observable<EstudianteModel> {
-        console.log(idestudiante);
+    //eliminarEstudiante(idestudiante : string) : Observable<EstudianteModel> {
+      //  console.log(idestudiante);
         // return this.http.delete<RecetaModel>(`${this.API_URL}/eliminar/${idReceta}`);
-        return this.http.delete<EstudianteModel>(this.API_URL+'/eliminar/'+idestudiante);
+        //return this.http.delete<EstudianteModel>(this.API_URL+'/eliminar/'+idestudiante);
     
-      }
+      //}
 }

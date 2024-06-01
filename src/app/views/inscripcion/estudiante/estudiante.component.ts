@@ -47,7 +47,7 @@ r: any;
         error: (error) => {
           console.log(error);
           this.getEstudiante();
-        }  
+        }   
       })
   }
 };
