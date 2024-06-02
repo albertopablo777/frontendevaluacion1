@@ -1,57 +1,57 @@
 <c-row ngPreserveWhitespaces>
     <c-col xs="12">
-    <h1>La Kantuta 3 </h1>
+    <h1>Unidad educativa </h1>
     <c-card class="mb-4">
         <c-card-header>
           <strong>Formulario de Estudiante</strong>
         </c-card-header>
         <c-card-body>
-            <form cForm>
+            <form cForm (ngSubmit)= "guardarestudiante">
               <div class="mb-3">
-                <label cLabel for="Apellido Paterno">Apellido paterno</label>
+                <label cLabel for="_apPAT">Apellido paterno</label>
                 <input cFormControl
-                       id="Apellido Paterno"
-                       placeholder="Apellido Paterno"
+                       id="_apPAT"
+                       placeholder="Ingrese Apellido Paterno"
+                       [(ngModel)] = "estudiantemodelo._apPAT" 
                        type="text"
-                       [(ngModel)] = "estudiantemodelo._apPAT" name = "first"
                        name = "Apellido Paterno"
                 />
               </div>
               <div class="mb-3">
-                <label cLabel for="Apellido Materno">Apellido materno</label>
+                <label cLabel for="_apMAT">Apellido materno</label>
                 <input cFormControl
-                       id="Apellido Materno"
-                       placeholder="Apellido Materno"
-                       type="text"
+                       id="_apMAT"
+                       placeholder=" Ingrese Apellido Materno"
                        [(ngModel)] = "estudiantemodelo._apMAT"
+                       type="text"
                        name = "Apellido Materno"
                 />
               </div>
               <div class="mb-3">
-                <label cLabel for="Nombre 1">Primer Nombre </label>
+                <label cLabel for="_nom1">Primer Nombre </label>
                 <input cFormControl
-                       id="Nombre 1"
-                       placeholder="Nombre 1"
+                       id="_nom1"
+                       placeholder="Ingrese el prmer nombre"
                        type="text"
                        [(ngModel)] = "estudiantemodelo._nom1"
                        name = "Nombre 1"
                 />
               </div>
               <div class="mb-3">
-                <label cLabel for="Nombre 2">Segundo Nombre </label>
+                <label cLabel for="_nom2">Segundo Nombre </label>
                 <input cFormControl
-                       id="Nombre 2"
-                       placeholder="Nombre 2"
+                       id="_nom2"
+                       placeholder="Ingrese el segundo Nombre"
                        type="text"
                        [(ngModel)] = "estudiantemodelo._nom2"
                        name = "Nombre 2"
                 />
               </div>
             <div class="mb-3">
-              <label cLabel for="Curso">Curso </label>
+              <label cLabel for="_curso">Curso </label>
               <input cFormControl
-                     id="Curso"
-                     placeholder="Curso"
+                     id="_curso"
+                     placeholder="Ingrese el Curso"
                      type="text"
                      [(ngModel)] = "estudiantemodelo._curso"
                      name = "Curso"
@@ -61,33 +61,33 @@
                 <label cLabel for="Lugar nacimiento">Lugar de nacimiento </label>
                 <input cFormControl
                        id="Lugar nacimiento"
-                       placeholder="Lug nacimiento"
+                       placeholder="Lugar de nacimiento"
                        type="text"
                        [(ngModel)] = "estudiantemodelo.lugnac"
                        name = "Lugar nacimiento"
                 />
               </div>
               <div class="mb-3">
-                <label cLabel for="Edad"> Edad </label>
+                <label cLabel for="_edad"> Edad </label>
                 <input cFormControl
-                       id="Edad"
-                       placeholder="Edad"
+                       id="_edad"
+                       placeholder="Edad del estudiante"
                        type="number"
                        [(ngModel)] = "estudiantemodelo._edad"
                        name = "Edad"
                 />
               </div>
               <div class="mb-3">
-                <label cLabel for="Edad"> Usuario </label>
+                <label cLabel for="Usuario"> Usuario </label>
                 <input cFormControl
                        id="Usuario"
-                       placeholder="Usuario"
+                       placeholder="ingrese un codigo de Usuario"
                        type="text"
                        [(ngModel)] = "estudiantemodelo.usuario"
                        name = "Usuario"
                 />
               </div>
-              <button (click) = "guardarestudiante" cButton class="me-1" color="primary" type="submit">
+              <button cButton class ="me-1" color ="primary" type ="submit">
                 Guardar
               </button>
             </form>
@@ -106,14 +106,15 @@
             </tr>
             </thead>
             <tbody>
-              @for (estud of listaEstudiantes; track estud; ){
+              @for (estudiante of listaEstudiantes; track estudiante;){
                 <tr>
                   <th scope="row">1</th>
-                  <td>{{estud._apPAT}}</td>
-                  <td>{{estud._apMAT}}</td>
-                  <td>{{estud._nom1}}</td>
-                  <td><button cButton color="warning" variant="outline">Editar</button> 
-                      <button cButton color="danger" variant="outline">Eliminar</button></td>
+                  <td>{{estudiante._apPAT}}</td>
+                  <td>{{estudiante._apMAT}}</td>
+                  <td>{{estudiante._nom1}}</td>
+                  <td>
+                      <button cButton color="warning" variant="outline" (click) = "verestudiante">Editar</button> 
+                      <button cButton color="danger" variant="outline" (click) = "eliminaestudiante">Eliminar</button></td>
                 </tr>
               }
             </tbody>

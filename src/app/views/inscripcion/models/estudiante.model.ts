@@ -1,4 +1,5 @@
 export class EstudianteModel {
+    _id: string = ''
     _apPAT: String = '';
     _apMAT: String = '';
     _nom1: String  = '';
@@ -6,6 +7,6 @@ export class EstudianteModel {
     _curso: String = '';
     lugnac: String = '';
     _edad: Number  = 0;
-    usuario: string = '' 
-     //{type: mongoose.Schema.Types.ObjectId,ref: 'usuario'}
+    usuario: string = ""
+    //{type: mongoose.Schema.Types.ObjectId,ref: 'usuario'}
 }
